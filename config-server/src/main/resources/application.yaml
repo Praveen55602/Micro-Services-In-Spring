@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+#by default profiles are set to git hub not it will pick all config from this project only
+#by default this will search for all the confiuration file of other services inside the config folder of resources
+spring:
+  profiles:
+    active: native
