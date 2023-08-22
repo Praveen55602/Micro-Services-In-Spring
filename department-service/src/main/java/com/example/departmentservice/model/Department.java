@@ -1,5 +1,8 @@
 package com.example.departmentservice.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Department
  */
@@ -8,6 +11,15 @@ public class Department {
 
     private Long id;
     private String name;
+    private List<Employee> employees = new ArrayList<>();
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 
     @Override
     public String toString() {
