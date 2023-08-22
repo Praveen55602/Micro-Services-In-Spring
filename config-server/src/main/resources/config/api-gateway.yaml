@@ -1,0 +1,14 @@
+Server:
+  port: 8060 # this service will listen to incoming request on port 8081
+
+#eureka related configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # search for eureka at this url and then register itself
+
+#this configuration will enable the service to add 100% of the matrices to the zipkin
+management:
+  tracing:
+    sampling:
+      probability: 1.0

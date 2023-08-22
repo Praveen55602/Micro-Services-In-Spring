@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: "optional:configserver:http://localhost:8080"
+  cloud:
+    gateway:
+      routes:
+        - id: employee-service
+          uri: lb://employee-service # sends all the traffic coming to a uri starting with employee/ to employee-service service here lb means load balancer
+          predicates:
+            - Path=/employee/**
+
+        - id: department-service
+          uri: lb://department-service
+          predicates:
+            - Path=/department/**
